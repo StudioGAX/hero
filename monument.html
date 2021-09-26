@@ -1,0 +1,116 @@
+<html> 
+    
+    <head>
+    <title>/ AM I A MONUMENT? /</title>
+        <style>
+body {
+    padding:10px;
+    text-decoration-color: white;
+    background-color: blue;
+    font-family: sans-serif;
+            }    
+input[type=text] {
+  border: none;
+  background-color: none;
+  outline: 0;
+  font-size: 25px;
+  width: 300px;
+  height: 30px;
+}
+
+input[type=text]:focus {
+  border: none;
+    color: white;
+  background-color: none;
+  outline: 0;
+  width: 300px;
+  height: 30px;
+}
+
+.center {
+  height: 40px;
+  width: 300px;
+  background-color: blue;
+  text-decoration-color: white;
+  text-align: center;
+  overflow: auto;
+  margin: auto; 
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0; 
+}
+    .button {
+background-color:chartreuse;
+  border: none;
+  color: blue;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  cursor:cell;
+ position:relative;
+        top:0px; left: 0px; bottom: 0px; right: 0px; 
+            }
+            
+     .table {
+         table-layout: fixed;
+         text-align: left;
+         font-size: 12px;
+         max-width: 75%;   
+         font-family: sans-serif;
+        color: white;
+            }
+            
+
+            
+ ::placeholder {
+     color: chartreuse;
+     font-style: italic;
+     font-size: 16px;
+            }
+        
+
+        
+        </style>
+</head>
+    
+    <body>
+    
+        <div> 
+    <input type="text" id="userInput"
+    class="center" placeholder="AM I A MONUMENT?"/>
+    </div>
+    
+        <div>
+        <button class=button type="button" onclick="addData()">submit</button>
+
+        </div>
+        
+    <div>
+         
+    <table class="table" id="table">
+        <tr>
+            <th>latest responses</th>
+        </tr>
+        <tbody id="rows">
+            <tr>
+            
+            </tr>
+        </tbody>
+</table>
+         </div>  
+    
+
+</body>        
+        
+    <script>
+        
+function addData() {
+    var personName = document.getElementById("userInput").value;
+    var newRow = document.createElement("tr");
+    var newCell = document.createElement("td");
+    newCell.innerHTML = personName;
+    newRow.append(newCell);
+    document.getElementById("rows").appendChild(newRow);
+    document.getElementById("userInput").value = '';
+}
+</script>
+</html>
